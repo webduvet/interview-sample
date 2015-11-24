@@ -1,0 +1,18 @@
+<div class="container" ng-controller="MainController as vm">
+
+	<div>
+		<h3>Result here:</h3>
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="item in vm.data">
+				{{item.name}} - {{item.superpower}}
+			</li>
+		</ul>
+	</div>
+	<button type="submit" class="btn btn-primary" ng-click="vm.loadResource()">Load resource</button>
+	<button type="submit" class="btn btn-danger" ng-click="vm.makeErrorCall()">do not dare!</button>
+	<button type="submit" class="btn btn-alert" ng-click="vm.clear()">Clear</button>
+	<div>
+		<search-box model='vm.data'></search-box>
+	</div>
+	<div error-message err="vm.error">this must be gone</div>
+</div>
